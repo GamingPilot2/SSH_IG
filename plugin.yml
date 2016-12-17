@@ -1,0 +1,9 @@
+---
+name: SSHConnect
+author:  BecomeBetterAtPM
+version: 1.0
+api: [2.0.0]
+main: "BecomeBetterAtPM\SSHConnect\Main"
+commands: []
+permissions: []
+...
